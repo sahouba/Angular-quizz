@@ -1,0 +1,23 @@
+<div class="quizz-form">
+  <div class="form-group">
+    <select class="form-control">
+          <option value="">Choisir une Catégorie</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <select class="form-control">
+          <option value="">choisir un  Niveau Difficulté</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" name="nbQuestions" placeholder="Nombre de questions">
+  </div>
+  <button class="btn btn-primary" type="button"> Lancer Le QCM</button>
+</div>
+<div>
+  {{message}}
+  <ul>
+    <li *ngFor="let fruit of fruits">{{fruit}}</li>
+  </ul>
+
+</div>
