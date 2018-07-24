@@ -1,23 +1,28 @@
 <div class="quizz-form">
   <div class="form-group">
+
     <select class="form-control">
-          <option value="">Choisir une Catégorie</option>
-        </select>
+      <option value="0">Choisir une Catégorie</option>
+      <option  *ngFor="let category of categories" value="{{category.id}}">{{category.label}}</option>
+
+    </select>
   </div>
   <div class="form-group">
     <select class="form-control">
-          <option value="">choisir un  Niveau Difficulté</option>
+          <option value="0">choisir un  Niveau Difficulté</option>
+          <option *ngFor="let difficulty of difficulties" value="{{difficulty.id}}">{{difficulty.label}}</option>
         </select>
   </div>
   <div class="form-group">
-    <input class="form-control" type="text" name="nbQuestions" placeholder="Nombre de questions">
+    <input class="form-control" type="text" name="nbQuestions" [(ngModel)]="nbQuestions" placeholder="Nombre de questions">
   </div>
-  <button class="btn btn-primary" type="button"> Lancer Le QCM</button>
+  <button (click)="submit()" class="btn btn-primary" type="button"> Lancer Le QCM</button>
 </div>
-<div>
-  {{message}}
+<!--<div>
+
   <ul>
-    <li *ngFor="let fruit of fruits">{{fruit}}</li>
+    <li *ngFor="let student of students">{{student.name}}</li>
   </ul>
 
 </div>
+-->

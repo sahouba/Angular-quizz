@@ -10,13 +10,20 @@ export class DataService {
    test()   {
     console.log('test depuis DataService');
     //get renvoie un objet de type Observable(Rxjs)
-    this.http
-    .get(this.api)
-    .subscribe((res)=>{
-      console.log(res);
-    });
+     return this.http.get(this.api);
+    // .subscribe((res)=>{
+    //   console.log(res);
+    //       return res;
+    // });
+    //on ne souscrit pas au Niveau du service
+
   }
   getCategories(){
-
+      //get renvoie un objet de type Observable(Rxjs)
+        //on ne souscrit pas au Niveau du service
+      return this.http.get(this.api+'/category');
+  }
+  getDifficulies(){
+      return this.http.get(this.api+'/difficulty');
   }
 }

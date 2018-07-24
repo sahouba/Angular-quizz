@@ -9,12 +9,29 @@ import { DataService } from '../data.service';
 export class QuizzComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
-  message:string="coucou";
-  fruits:string[]=['Fraise','Vanille','Abricot'];
-        ngOnInit() {
-        //console.log('ok');
-        this.dataService.test();
-
-  }
+  categories:object;
+   students:object;
+   difficulties:object;
+        ngOnInit()
+         {
+            //console.log('ok');
+         //
+         //  this.dataService.test().subscribe((res)=>{
+         //      this.students=res;
+         // });
+          //console.log(this.students);
+          this.dataService.getCategories().subscribe((res)=>{
+            this.categories=res;
+              });
+          this.dataService.getDifficulies().subscribe((res)=>{
+            this.difficulties=res;
+          });
+         }
+  submit()
+    {
+    //console.log(this.nbQuestions);
+      console.log(this.category);
+  // console.log(this.difficulty);
+    }
 
 }
